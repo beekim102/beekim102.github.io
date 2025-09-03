@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Shopfinity - เสื้อผ้า</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kanit', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #fff8f0;
+      color: #333;
+    }
+
+    header {
+      background-color: #ff6f00;
+      color: white;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    
+    .category-bar {
+      background-color: #d84315;
+      padding: 10px 0;
+      text-align: center;
+    }
+    
+    .category-bar a {
+      color: white;
+      text-decoration: none;
+      padding: 10px 20px;
+      font-weight: bold;
+      transition: background-color 0.3s;
+    }
+
+    .category-bar a:hover {
+      background-color: #e65100;
+    }
+
+    .container {
+      max-width: 1100px;
+      margin: 40px auto;
+      padding: 20px;
+    }
+
+    h2 {
+      color: #ff6f00;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+    }
+
+    .product-card {
+      background-color: #fff;
+      border: 2px solid #ffcc80;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.1);
+      transition: transform 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .product-card:hover {
+      transform: scale(1.03);
+    }
+    
+    .product-info {
+        flex-grow: 1;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    .product-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      margin-bottom: 10px;
+      cursor: pointer;
+    }
+
+    .product-card h3 {
+      margin: 10px 0;
+      color: #e65100;
+    }
+
+    .product-card p {
+      font-size: 14px;
+      color: #555;
+    }
+
+    .price {
+      color: #d84315;
+      font-weight: bold;
+      margin-top: 8px;
+    }
+    
+    .add-to-cart {
+      background-color: #ff6f00;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      font-size: 16px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.2s ease;
+      margin-top: 15px;
+    }
+
+    .add-to-cart:hover {
+      background-color: #e65100;
+    }
+
+    footer {
+      background-color: #ff6f00;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    @media (max-width: 768px) {
+      .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .product-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1;
+      padding-top: 60px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgba(0,0,0,0.9);
+    }
+
+    .modal-content {
+      margin: auto;
+      display: block;
+      max-width: 80%;
+      max-height: 80%;
+    }
+
+    .close {
+      position: absolute;
+      top: 15px;
+      right: 35px;
+      color: #f1f1f1;
+      font-size: 40px;
+      font-weight: bold;
+      transition: 0.3s;
+      cursor: pointer;
+    }
+
+    .close:hover,
+    .close:focus {
+      color: #bbb;
+      text-decoration: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1 style="font-size: 85px;">S H O P F I N I T Y</h1>
+    <p style="font-size: 22px;">ช้อปสินค้าไม่มีที่สิ้นสุดได้ที่นี่เลย</p>
+  </header>
+  
+  <div class="category-bar">
+    <a href="index.html">สินค้าแนะนำ</a>
+    <a href="books.html">หนังสือ</a>
+    <a href="clothes.html">เสื้อผ้า</a>
+  </div>
+
+  <div class="container">
+    <h2>หมวดหมู่: เสื้อผ้า</h2>
+    <div class="product-grid">
+      <div class="product-card">
+        <img src="/MyCode/Pic/H&M.jpg" style="width: 300px; height: 350px;">
+        <div class="product-info">
+          <h3>เสื้อกันหนาว H&M</h3>
+          <p>เสื้อฮู้ดดี้แขนยาวมีซิปแบรนด์ H&M ผลิตจากผ้าเนื้อนุ่มให้ความอบอุ่นและสวมใส่สบาย เหมาะสำหรับใส่ในวันสบายๆ หรือช่วงอากาศเย็นๆ สามารถแมทช์ได้ง่ายกับกางเกงหลากหลายสไตล์</p>
+          <div class="price">฿1,215</div>
+        </div>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+      <div class="product-card">
+        <img src="/MyCode/Pic/1SH.jpeg" style="width: 300px; height: 350px;">
+        <div class="product-info">
+          <h3>เสื้อผ้า Fashion สำหรับผู้หญิง</h3>
+          <p>เสื้อแฟชั่นสไตล์น่ารัก เสื้อตัวในเป็นสายเดี่ยวลายดอกไม้สีสันสดใส มีเสื้อแขนสั้นซีทรูสีขาวสวมทับด้านนอก สามารถใส่เป็นชุดเดียวจบหรือจะแยกใส่ก็เก๋ไม่แพ้กัน เหมาะสำหรับลุคไปเที่ยวคาเฟ่หรือออกเดทในวันสบายๆ</p>
+          <div class="price">฿226</div>
+        </div>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+      <div class="product-card">
+        <img src="/MyCode/Pic/3SH.jpg" style="width: 300px; height: 350px;">
+        <div class="product-info">
+          <h3>เสื้อกันหนาว Fashion หลากสีสำหรับผู้หญิง</h3>
+          <p>เสื้อแขนยาวแฟชั่นหลากสีสัน (ชมพู, ฟ้า, ขาว) สกรีนลายการ์ตูนน่ารักๆ เนื้อผ้านุ่ม ระบายอากาศได้ดี ไม่หนาจนเกินไป สามารถใส่ได้ทุกวัน ช่วยเพิ่มลุคสดใสและขี้เล่นให้กับคุณ</p>
+          <div class="price">฿152</div>
+        </div>
+        <button class="add-to-cart">เพิ่มลงตะกร้า</button>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    &copy; Shopfinity | Develop By Kittiphong Dokham
+  </footer>
+
+  <div id="imageModal" class="modal">
+    <span class="close">&times;</span>
+    <img class="modal-content" id="modalImage">
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const cartButtons = document.querySelectorAll('.add-to-cart');
+      cartButtons.forEach(button => {
+        button.addEventListener('click', () => {
+          alert('เพิ่มสินค้าลงในตะกร้าแล้ว!');
+        });
+      });
+
+      const modal = document.getElementById('imageModal');
+      const modalImage = document.getElementById('modalImage');
+      const closeBtn = document.getElementsByClassName('close')[0];
+      const productImages = document.querySelectorAll('.product-card img');
+
+      productImages.forEach(image => {
+        image.addEventListener('click', () => {
+          modal.style.display = 'block';
+          modalImage.src = image.src;
+        });
+      });
+
+      closeBtn.addEventListener('click', () => {
+        modal.style.display = 'none';
+      });
+
+      window.addEventListener('click', (event) => {
+        if (event.target == modal) {
+          modal.style.display = 'none';
+        }
+      });
+    });
+  </script>
+
+</body>
+</html>
